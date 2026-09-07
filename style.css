@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+
+/* ==========================================
+   BASIC RESET
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   PAGE
+   ========================================== */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Outfit", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #3b0764,
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #1e3a8a,
+            transparent 40%
+        ),
+
+        #080812;
+
+    color: white;
+
+    text-align: center;
+
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   TITLE
+   ========================================== */
+
+h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 60px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #c4b5fd,
+        #818cf8
+    );
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 50px rgba(139, 92, 246, 0.3);
+}
+
+
+/* ==========================================
+   MAIN COUNTDOWN
+   ========================================== */
+
+.countdown {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    max-width: 1200px;
+
+    padding: 20px;
+}
+
+
+/* ==========================================
+   MAIN TIME BOXES
+   ========================================== */
+
+.time-box {
+    position: relative;
+
+    width: 155px;
+
+    padding: 30px 15px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35),
+
+        inset 0 1px
+        rgba(255, 255, 255, 0.1);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   TIME BOX GLOW
+   ========================================== */
+
+.time-box::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    background: #8b5cf6;
+
+    filter: blur(80px);
+
+    opacity: 0.15;
+
+    top: -80px;
+
+    left: -50px;
+}
+
+
+/* ==========================================
+   TIME BOX HOVER
+   ========================================== */
+
+.time-box:hover {
+    transform: translateY(-12px) scale(1.03);
+
+    background: rgba(255, 255, 255, 0.13);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.5),
+
+        0 0 30px
+        rgba(139, 92, 246, 0.25);
+}
+
+
+/* ==========================================
+   MAIN NUMBERS
+   ========================================== */
+
+.time-box span {
+    position: relative;
+
+    display: block;
+
+    font-size: 4rem;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    color: white;
+
+    text-shadow:
+        0 0 20px
+        rgba(255, 255, 255, 0.2);
+}
+
+
+/* ==========================================
+   MAIN LABELS
+   ========================================== */
+
+.time-box p {
+    position: relative;
+
+    margin-top: 12px;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: #a5b4fc;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================
+   CLASS COUNTERS
+   ========================================== */
+
+.classes {
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    width: min(1100px, 90vw);
+}
+
+
+/* ==========================================
+   CLASS BOX
+   ========================================== */
+
+.class-box {
+    position: relative;
+
+    padding: 20px 15px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* ==========================================
+   CLASS BOX HOVER
+   ========================================== */
+
+.class-box:hover {
+    transform: translateY(-5px);
+
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ==========================================
+   CLASS NUMBERS
+   ========================================== */
+
+.class-box span {
+    display: block;
+
+    font-size: 2.4rem;
+
+    font-weight: 800;
+
+    color: white;
+}
+
+
+/* ==========================================
+   CLASS LABELS
+   ========================================== */
+
+.class-box p {
+    margin-top: 5px;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    color: #a5b4fc;
+}
+
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .classes {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    h1 {
+        font-size: 3rem;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .countdown {
+        gap: 12px;
+    }
+
+
+    .time-box {
+        width: 130px;
+
+        padding: 22px 10px;
+    }
+
+
+    .time-box span {
+        font-size: 3rem;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width: 500px) {
+
+    .classes {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+
+    .class-box {
+        padding: 15px 8px;
+    }
+
+
+    .class-box span {
+        font-size: 2rem;
+    }
+
+
+    .class-box p {
+        font-size: 0.6rem;
+    }
+
+}
