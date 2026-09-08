@@ -13,6 +13,46 @@ const targetDate = new Date(
     0
 );
 
+// ===============================
+// ONE-TIME EXTRA CLASSES
+// ===============================
+
+const extraClasses = {
+    Ballet: [
+        {
+            date: "2026-09-12",
+            start: "09:00",
+            end: "10:00"
+        }
+    ],
+
+    VCASS: [],
+
+    Conditioning: [],
+
+    Gym: [],
+
+    Character: [
+        {
+            date: "2026-09-12",
+            start: "10:15",
+            end: "11:15"
+        }
+    ],
+
+    Contemporary: [],
+
+    "Classical Studies": [],
+
+    Repertoire: [
+        {
+            date: "2026-09-12",
+            start: "11:30",
+            end: "12:15"
+        }
+    ]
+};
+
 
 // ==========================================
 // CLASS SCHEDULE
@@ -375,7 +415,7 @@ function createDate(date, time) {
 // GET ALL CLASS SESSIONS
 // ==========================================
 
-function getAllClasses(classSchedule) {
+function getAllClasses(classSchedule, className) {
 
     const classes = [];
 
@@ -464,6 +504,61 @@ function getAllClasses(classSchedule) {
 
     }
 
+// ==========================================
+// ADD ONE-TIME EXTRA CLASSES
+// ==========================================
+
+if (extraClasses[className]) {
+
+    extraClasses[className].forEach(session => {
+
+        const [year, month, day] =
+            session.date.split("-").map(Number);
+
+        const [startHour, startMinute] =
+            session.start.split(":").map(Number);
+
+        const [endHour, endMinute] =
+            session.end.split(":").map(Number);
+
+
+        const start = new Date(
+            year,
+            month - 1,
+            day,
+            startHour,
+            startMinute,
+            0
+        );
+
+
+        const end = new Date(
+            year,
+            month - 1,
+            day,
+            endHour,
+            endMinute,
+            0
+        );
+
+
+        // Only include extras before the deadline
+
+        if (
+            start >= firstPeriod &&
+            end <= targetDate
+        ) {
+
+            classes.push({
+                start: start,
+                end: end
+            });
+
+        }
+
+    });
+
+}
 
     return classes;
 }
@@ -476,11 +571,15 @@ function getAllClasses(classSchedule) {
 
 function countClassesLeft(
     classSchedule,
+    className,
     now
 ) {
 
     const classes =
-        getAllClasses(classSchedule);
+        getAllClasses(
+            classSchedule,
+            className
+        );
 
 
     let remaining = 0;
@@ -525,6 +624,7 @@ function updateClassCounters(now) {
     const ballet =
         countClassesLeft(
             schedule.Ballet,
+            "Ballet",
             now
         );
 
@@ -532,6 +632,7 @@ function updateClassCounters(now) {
     const vcass =
         countClassesLeft(
             schedule.VCASS,
+            "VCASS",
             now
         );
 
@@ -539,6 +640,7 @@ function updateClassCounters(now) {
     const conditioning =
         countClassesLeft(
             schedule.Conditioning,
+            "Conditioning",
             now
         );
 
@@ -546,6 +648,7 @@ function updateClassCounters(now) {
     const gym =
         countClassesLeft(
             schedule.Gym,
+            "Gym",
             now
         );
 
@@ -553,6 +656,7 @@ function updateClassCounters(now) {
     const character =
         countClassesLeft(
             schedule.Character,
+            "Character",
             now
         );
 
@@ -560,6 +664,7 @@ function updateClassCounters(now) {
     const contemporary =
         countClassesLeft(
             schedule.Contemporary,
+            "Contemporary",
             now
         );
 
@@ -567,6 +672,7 @@ function updateClassCounters(now) {
     const classicalStudies =
         countClassesLeft(
             schedule["Classical Studies"],
+            "Classical Studies",
             now
         );
 
@@ -574,6 +680,7 @@ function updateClassCounters(now) {
     const repertoire =
         countClassesLeft(
             schedule.Repertoire,
+            "Repertoire",
             now
         );
 
