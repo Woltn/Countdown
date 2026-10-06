@@ -730,6 +730,70 @@ function updateClassCounters(now) {
 
 }
 
+// ==========================================
+// TERM PROGRESS BAR
+// ==========================================
+
+const termStart = new Date(
+    2026,
+    9,
+    5,
+    0,
+    0,
+    0
+);
+
+const termEnd = new Date(
+    2026,
+    11,
+    4,
+    17,
+    45,
+    0
+);
+
+
+function updateTermProgress(now) {
+
+    const totalDuration =
+        termEnd - termStart;
+
+    const elapsed =
+        now - termStart;
+
+
+    let progress =
+        (elapsed / totalDuration) * 100;
+
+
+    // Keep progress between 0% and 100%
+
+    progress =
+        Math.max(
+            0,
+            Math.min(100, progress)
+        );
+
+
+    // Round to exactly 2 decimal places
+
+    const percentage =
+        progress.toFixed(2);
+
+
+    document.getElementById(
+        "termProgress"
+    ).textContent =
+        percentage + "%";
+
+
+    document.getElementById(
+        "termProgressBar"
+    ).style.width =
+        percentage + "%";
+
+}
+
 
 
 // ==========================================
@@ -788,6 +852,8 @@ function updateCountdown() {
         updateClassCounters(
             targetDate
         );
+
+        updateTermProgress(now);
 
 
         return;
