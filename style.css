@@ -389,3 +389,54 @@ h1 {
     }
 
 }
+
+/* ==========================================
+   TERM PROGRESS BAR
+   ========================================== */
+
+.term-progress {
+    width: min(1100px, 90vw);
+    margin-top: 35px;
+    text-align: center;
+}
+
+.progress-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+#termProgress {
+    color: #a5b4fc;
+    font-weight: 800;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, 0.1),
+        0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        #8b5cf6,
+        #6366f1,
+        #818cf8
+    );
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+    transition: width 0.5s ease;
+}
