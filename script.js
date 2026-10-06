@@ -3,7 +3,7 @@
 // ==========================================
 
 // Everything ends on December 4th at 5:45 PM
-console.log("Countdown - Version 1");
+console.log("Countdown - Version 1.2");
 
 const targetDate = new Date(
     2026,
@@ -970,7 +970,7 @@ function updateCountdown() {
 // UPDATE TERM PROGRESS
 // ======================================
 
-updateTermProgress(now);
+    updateTermProgress(now);
 
 }
 
