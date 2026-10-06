@@ -3,6 +3,7 @@
 // ==========================================
 
 // Everything ends on December 4th at 5:45 PM
+console.log("Countdown - Version 1");
 
 const targetDate = new Date(
     2026,
