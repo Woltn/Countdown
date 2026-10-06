@@ -3,7 +3,7 @@
 // ==========================================
 
 // Everything ends on December 4th at 5:45 PM
-console.log("Countdown - Version 1.3");
+console.log("Countdown - Version 1.4");
 
 const targetDate = new Date(
     2026,
@@ -70,7 +70,7 @@ const extraClasses = {
 // 6 = Saturday
 
 
-const schedule = {
+ schedule = {
 
     // ======================================
     // BALLET
@@ -366,7 +366,7 @@ const schedule = {
 // First class period:
 // September 14 → September 18
 
-const firstPeriod = new Date(
+ firstPeriod = new Date(
     2026,
     8,
     8,
@@ -779,7 +779,7 @@ function updateTermProgress(now) {
     // Round to exactly 2 decimal places
 
     const percentage =
-        progress.toFixed(2);
+        progress.toFixed(3);
 
 
     document.getElementById(
