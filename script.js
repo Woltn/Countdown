@@ -958,23 +958,20 @@ function updateCountdown() {
 
 
 
-    // ======================================
-    // UPDATE CLASS COUNTERS
-    // ======================================
+// ======================================
+// UPDATE CLASS COUNTERS
+// ======================================
 
-    updateClassCounters(now);
+updateClassCounters(now);
 
-}
 
 // ======================================
 // UPDATE TERM PROGRESS
 // ======================================
 
-    updateTermProgress(now);
+updateTermProgress(now);
 
 }
-
-
 
 // ==========================================
 // START
