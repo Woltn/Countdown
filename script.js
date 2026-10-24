@@ -21,7 +21,7 @@ const targetDate = new Date(
 const extraClasses = {
     Ballet: [
         {
-            date: "2026-10-24",
+            date: "2026-10-31",
             start: "09:00",
             end: "10:15"
         }
@@ -47,7 +47,7 @@ const extraClasses = {
 
     Repertoire: [
         {
-            date: "2026-10-24",
+            date: "2026-10-31",
             start: "10:30",
             end: "11:30"
         }
