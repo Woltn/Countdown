@@ -33,13 +33,7 @@ const extraClasses = {
 
     Gym: [],
 
-    Character: [
-        {
-            date: "2026-09-12",
-            start: "10:15",
-            end: "11:15"
-        }
-    ],
+    Character: [],
 
     Contemporary: [],
 
