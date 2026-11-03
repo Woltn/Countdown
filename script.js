@@ -3,7 +3,7 @@
 // ==========================================
 
 // Everything ends on December 4th at 5:45 PM
-console.log("Countdown - Version 1.43");
+console.log("Countdown - Version 1.44");
 
 const targetDate = new Date(
     2026,
@@ -21,9 +21,9 @@ const targetDate = new Date(
 const extraClasses = {
     Ballet: [
         {
-            date: "2026-10-31",
+            date: "2026-11-7",
             start: "09:00",
-            end: "10:15"
+            end: "09:45"
         }
     ],
 
@@ -42,8 +42,8 @@ const extraClasses = {
     Repertoire: [
         {
             date: "2026-10-31",
-            start: "10:30",
-            end: "11:30"
+            start: "10:15",
+            end: "10:30"
         }
     ]
 };
